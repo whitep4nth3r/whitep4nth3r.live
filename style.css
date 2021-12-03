@@ -1,0 +1,59 @@
+/* dark by default */
+
+:root {
+  --color-bg: #0f111a;
+  --color-fg: #ffffff;
+  --color-bs: #ffb626;
+
+  --max-width: 800px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-bg: #ffffff;
+    --color-fg: #0f111a;
+    --color-bs: #f11012;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: var(--color-bg);
+  font-size: 1rem;
+}
+
+.stream {
+  aspect-ratio: 16/9;
+  max-width: var(--max-width);
+  margin: auto;
+}
+
+.stream__title {
+  font-size: clamp(1rem, 2vw, 3rem);
+  text-align: center;
+  color: var(--color-fg);
+  margin: 4rem auto;
+}
+
+#twitch-embed {
+  height: 100%;
+}
+
+.footer {
+  text-align: center;
+  max-width: var(--max-width);
+  margin: 4rem auto;
+}
+
+.footer__text {
+  color: var(--color-fg);
+  font-size: 1rem;
+}
