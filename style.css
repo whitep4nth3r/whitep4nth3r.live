@@ -146,6 +146,18 @@ body {
   color: var(--color-fg);
   font-size: 1rem;
   font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.footer__link {
+  color: var(--color-fg);
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: underline;
+  text-underline-offset: 0.25rem;
+  text-decoration-thickness: 0.25rem;
+  font-family: serif;
+  margin-bottom: 1rem;
 }
 
 /* width */
