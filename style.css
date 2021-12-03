@@ -5,7 +5,12 @@
   --color-fg: #ffffff;
   --color-bs: #ffb626;
 
+  --yellow: #ffb626;
+  --red: #f11012;
+
   --max-width: 800px;
+
+  --bg-tile: "./bg_stars.gif";
 }
 
 @media (prefers-color-scheme: light) {
@@ -13,11 +18,14 @@
     --color-bg: #ffffff;
     --color-fg: #0f111a;
     --color-bs: #f11012;
+
+    --bg-tile: "./bg_squiggle.gif";
   }
 }
 
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
 html {
@@ -27,7 +35,15 @@ html {
 
 body {
   background-color: var(--color-bg);
+  background-image: url("bg_stars.gif");
+  background-repeat: repeat;
   font-size: 1rem;
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-image: url("bg_squiggle.svg");
+  }
 }
 
 .stream {
@@ -36,11 +52,22 @@ body {
   margin: auto;
 }
 
+.stream__titleContainer {
+  display: block;
+  background-color: var(--color-bg);
+  padding: 1rem;
+  max-width: var(--max-width);
+  margin: 4rem auto 4rem auto;
+  border: 0.25rem solid var(--yellow);
+  box-shadow: 0.4rem 0.4rem 0 0 var(--red);
+}
+
 .stream__title {
-  font-size: clamp(1rem, 2vw, 3rem);
+  display: block;
+  font-size: clamp(1.6rem, 3vw, 4rem);
   text-align: center;
   color: var(--color-fg);
-  margin: 4rem auto;
+  font-weight: bold;
 }
 
 #twitch-embed {
@@ -51,6 +78,8 @@ body {
   text-align: center;
   max-width: var(--max-width);
   margin: 4rem auto;
+  background-color: var(--color-bg);
+  padding: 1rem;
 }
 
 .footer__text {
