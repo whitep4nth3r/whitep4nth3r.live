@@ -20,9 +20,18 @@
     />
   </head>
   <body>
-    <main>
+    <main class="main">
+      <div id="pointless" class="nonsense">
+        Welcome to my website! You are visitor number
+        <span id="random"></span>
+      </div>
+      <div class="stream__titleContainer">
+        <h1 class="stream__title">
+          whitep4nth3r
+          <span aria-label="hand pointing down emoji">👇</span>
+        </h1>
+      </div>
       <section class="stream">
-        <h1 class="stream__title">whitep4nth3r.live</h1>
         <div id="twitch-embed"></div>
       </section>
     </main>
@@ -30,10 +39,32 @@
       <p class="footer__text">
         &copy; whitep4nth3r.live | ALL RIGHTS RESERVED (whatever that means)
       </p>
+      <a
+        href="https://dusty.domains/thanks/whitep4nth3r.live/0"
+        target="_blank"
+        class="footer__link"
+      >
+        Why did I make this?
+      </a>
     </footer>
 
     <script src="https://embed.twitch.tv/embed/v1.js"></script>
     <script type="text/javascript">
+      function getRandomInt(min, max) {
+        return Math.round(Math.random() * (max - min) + min);
+      }
+
+      function getRandomEntry(array) {
+        return array[getRandomInt(0, array.length - 1)];
+      }
+
+      const randomEl = document.getElementById("random");
+      const randMult = getRandomEntry([10, 100, 1000, 10000, 100000]);
+      const rand1 = Math.random();
+      const rand2 = Math.random();
+      const combined = Math.round(rand1 * rand2 * randMult, 0);
+      randomEl.textContent = `${combined}!!!`;
+
       const theme =
         window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
           ? "dark"
@@ -44,6 +75,7 @@
         height: "100%",
         channel: "whitep4nth3r",
         allowfullscreen: true,
+        layout: "video",
         autoplay: true,
         muted: true,
         theme,
